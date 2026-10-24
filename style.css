@@ -1,0 +1,1737 @@
+
+/* ==========================================
+   01. STILI GENERALI
+========================================== */
+
+/*
+   Include padding e bordi nella larghezza
+   e nell'altezza dichiarate per gli elementi.
+*/
+* {
+  box-sizing: border-box;
+}
+
+/* Imposta aspetto e tipografia di base dell'intera pagina. */
+body {
+  margin: 0;
+  background-color: #0b0e0d;
+  color: #f2f5f0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+/* I link ereditano il colore dal proprio elemento genitore. */
+a {
+  color: inherit;
+}
+
+/*
+   Limita la larghezza delle sezioni e le centra:
+   - 90% della larghezza disponibile;
+   - massimo 1100px;
+   - margini orizzontali automatici.
+*/
+.wrap {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+
+/* ==========================================
+   02. SPAZIATURE DELLE SEZIONI
+========================================== */
+
+/* Spazio sopra e sotto la presentazione iniziale. */
+.hero {
+  padding: 100px 0;
+}
+
+/*
+   Barra Tech Stack senza sfondo o separatori:
+   condivide lo sfondo della pagina e mantiene
+   il titolo fisso con le tecnologie in movimento.
+*/
+.ticker {
+  padding: 23px 0;
+  background: transparent;
+  color: #edf3e9;
+}
+
+/* Spaziatura condivisa da Projects, About Me e Contact. */
+.section {
+  padding: 80px 0;
+}
+
+
+/* ==========================================
+   03. HEADER E NAVIGAZIONE
+========================================== */
+
+/*
+   Flexbox distribuisce i tre figli diretti:
+   - logo;
+   - menu di navigazione;
+   - collegamento Contattami.
+
+   justify-content: space-between distribuisce
+   lo spazio disponibile tra gli elementi.
+*/
+body > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 20px 5%;
+}
+
+/* Allinea i link del menu su una riga. */
+body > header nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Elimina la sottolineatura dai link dell'Header. */
+body > header a {
+  text-decoration: none;
+}
+
+/*
+   Seleziona l'ultimo link figlio diretto
+   dell'Header e lo presenta come pulsante.
+*/
+body > header > a:last-child {
+  padding: 10px 18px;
+  border: 1px solid #C9FF5B;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+
+/* ==========================================
+   04. HERO SECTION
+========================================== */
+
+/*
+   Divide la Hero in due colonne:
+   - 1.1fr per il testo;
+   - 0.9fr per il terminale.
+
+   gap definisce la distanza tra le colonne.
+*/
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 64px;
+  align-items: center;
+}
+
+
+/* ==========================================
+   04.1 TESTI DELLA HERO
+========================================== */
+
+/*
+   Etichetta introduttiva.
+
+   uppercase trasforma il testo in maiuscolo
+   senza modificare il contenuto HTML.
+*/
+.eyebrow {
+  margin-bottom: 16px;
+  color: #C9FF5B;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/*
+   Titolo principale Build. Automate. Repeat.
+
+   clamp(minimo, preferito, massimo)
+   permette di adattare il font alla viewport.
+*/
+.hero h1 {
+  margin: 0 0 24px;
+  font-size: clamp(48px, 6vw, 84px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -2px;
+}
+
+/* Evidenzia la parola Repeat con il colore principale. */
+.highlight {
+  color: #C9FF5B;
+}
+
+/*
+   Descrizione personale della Hero.
+
+   max-width limita la lunghezza delle righe.
+   line-height aumenta la leggibilità.
+*/
+.hero-intro {
+  max-width: 520px;
+  margin-bottom: 32px;
+  color: #b6c3b7;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+
+/* ==========================================
+   04.2 COLLEGAMENTI DELLA HERO
+========================================== */
+
+/*
+   Affianca i due collegamenti.
+
+   flex-wrap permette di andare a capo
+   quando lo spazio orizzontale non basta.
+*/
+.actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+/* Link principale in stile pulsante verde lime. */
+.actions .btn {
+  display: inline-block;
+  padding: 14px 24px;
+  background-color: #C9FF5B;
+  color: #111713;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Collegamento secondario Scopri chi sono. */
+.actions .textlink {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+
+/* ==========================================
+   04.3 TERMINALE - CONTENITORE
+========================================== */
+
+/*
+   Permette alla colonna del terminale
+   di restringersi all'interno della Grid.
+*/
+.hero-visual {
+  min-width: 0;
+}
+
+/*
+   Finestra principale del terminale.
+
+   overflow: hidden impedisce ai contenuti
+   di oltrepassare i bordi arrotondati.
+*/
+.terminal {
+  background-color: #19221d;
+  border: 1px solid #34463a;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+
+/* ==========================================
+   04.4 TERMINALE - BARRA SUPERIORE
+========================================== */
+
+/* Barra con controlli macOS e nome del file. */
+.terminalbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 18px;
+  border-bottom: 1px solid #34463a;
+  background-color: #202b24;
+}
+
+/* Allinea i tre controlli decorativi. */
+.terminal-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Aspetto comune dei controlli stile macOS. */
+.circ {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Simboli decorativi, non sono pulsanti cliccabili. */
+.circ::after {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Chiusura: rosso con simbolo X. */
+.circ.red {
+  background-color: #ff5f57;
+}
+
+.circ.red::after {
+  content: "×";
+  font-size: 13px;
+  color: #792421;
+}
+
+/* Riduzione: giallo con trattino. */
+.circ.yellow {
+  background-color: #febc2e;
+}
+
+.circ.yellow::after {
+  content: "−";
+  font-size: 12px;
+  color: #805609;
+}
+
+/* Ingrandimento: verde con freccia diagonale. */
+.circ.green {
+  background-color: #28c840;
+}
+
+.circ.green::after {
+  content: "↗";
+  font-size: 11px;
+  color: #0d6924;
+}
+
+/* Etichetta del file aperto nel terminale. */
+.filename {
+  color: #9bab9e;
+  font-size: 12px;
+}
+
+
+/* ==========================================
+   04.5 TERMINALE - CODICE E SYNTAX HIGHLIGHTING
+========================================== */
+
+/*
+   Mantiene stabile l'altezza durante la digitazione.
+   Le righe lunghe possono scorrere dentro il terminale.
+*/
+.code {
+  margin: 0;
+  min-height: 340px;
+  padding: 24px;
+  background-color: #141c18;
+  color: #d4d4d4;
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  line-height: 1.7;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+/* Colori ispirati al tema Dark+ di Visual Studio Code. */
+.code .token-comment { color: #6a9955; }
+.code .token-keyword { color: #569cd6; }
+.code .token-property { color: #9cdcfe; }
+.code .token-string { color: #ce9178; }
+.code .token-function { color: #dcdcaa; }
+
+/* Cursore animato visibile solamente mentre si digita. */
+#typed-code.is-typing::after {
+  content: "";
+  display: inline-block;
+  width: 2px;
+  height: 1.15em;
+  margin-left: 2px;
+  background-color: #C9FF5B;
+  vertical-align: -0.2em;
+  animation: terminal-caret 800ms steps(1, end) infinite;
+}
+
+@keyframes terminal-caret {
+  50% { opacity: 0; }
+}
+
+/* Etichetta Always Learning sotto il terminale. */
+.float-label {
+  margin-top: 16px;
+  color: #C9FF5B;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-align: right;
+}
+
+
+/* ==========================================
+   05. TECH STACK
+========================================== */
+
+/*
+   Titolo e animazione restano sulla stessa riga.
+   La prima colonna si dimensiona sul titolo; la seconda
+   occupa il resto dello spazio disponibile.
+*/
+.ticker-in {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  align-items: center;
+  gap: 28px;
+}
+
+/* Testo fisso sulla sinistra, mai coinvolto nell'animazione. */
+.ticker h2 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  color: #edf3e9;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Un unico punto lime segnala il titolo senza rendere verde tutta la barra. */
+.ticker h2::before {
+  content: "";
+  display: block;
+  flex: 0 0 7px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #C9FF5B;
+  box-shadow: 0 0 0 4px rgba(185, 237, 127, 0.08);
+}
+
+/*
+   Finestra che ritaglia lo scorrimento orizzontale.
+   La sfumatura ai lati evita tagli visivi netti dei badge.
+*/
+.ticker-viewport {
+  min-width: 0;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 20px,
+    #000 calc(100% - 20px),
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 20px,
+    #000 calc(100% - 20px),
+    transparent
+  );
+}
+
+/*
+   Contiene tre liste identiche, senza gap esterno.
+   Scorrere di un terzo significa percorrere esattamente
+   una lista: il ciclo ricomincia senza interruzioni.
+   La terza lista copre il lato destro anche su desktop larghi.
+*/
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker-scroll 26s linear infinite;
+  will-change: transform;
+}
+
+@keyframes ticker-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-33.333333%);
+  }
+}
+
+/*
+   Ogni lista è una riga di badge senza ritorni a capo.
+   Il padding destro separa anche la fine di una lista
+   dall'inizio della successiva.
+*/
+.tech-list {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 14px;
+  list-style: none;
+  margin: 0;
+  padding: 0 14px 0 0;
+}
+
+/*
+   Ogni tecnologia è una pill autonoma con bordo e colore.
+   I badge non sono link: non assumono cursori cliccabili.
+*/
+.tech-list li {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  min-height: 42px;
+  padding: 9px 18px;
+  white-space: nowrap;
+  border: 1px solid var(--tech-accent, #C9FF5B);
+  border-radius: 999px;
+  background-color: #121b16;
+  color: var(--tech-accent, #C9FF5B);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Colori sobri che richiamano le famiglie tecnologiche. */
+.tech-list li:nth-child(1) { --tech-accent: #d9c0ff; } /* C# / .NET */
+.tech-list li:nth-child(2) { --tech-accent: #ffe487; } /* JavaScript */
+.tech-list li:nth-child(3) { --tech-accent: #91dff0; } /* React */
+.tech-list li:nth-child(4) { --tech-accent: #95cbfa; } /* Power Automate */
+.tech-list li:nth-child(5) { --tech-accent: #b2c6ff; } /* Azure DevOps */
+.tech-list li:nth-child(6) { --tech-accent: #a4d2ff; } /* TypeScript */
+
+/* Con mouse / trackpad, il passaggio sulla barra pausa il nastro. */
+@media (hover: hover) and (pointer: fine) {
+  .ticker-viewport:hover .ticker-track {
+    animation-play-state: paused;
+  }
+}
+
+/*
+   Riduci movimento: niente animazione né copia ripetuta.
+   La lista originale resta consultabile scorrendo col dito
+   oppure con trackpad, senza imporre movimento automatico.
+*/
+@media (prefers-reduced-motion: reduce) {
+  .ticker-viewport {
+    overflow-x: auto;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .ticker-track {
+    animation: none;
+    transform: none;
+    will-change: auto;
+  }
+
+  .tech-list[aria-hidden="true"] {
+    display: none;
+  }
+}
+
+
+/* ==========================================
+   06. PROJECTS SECTION
+========================================== */
+
+/*
+   Intestazione Projects:
+   - titolo a sinistra;
+   - descrizione introduttiva a destra.
+*/
+.section-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+/* Etichetta numerata condivisa con About Me e Contact. */
+.kicker {
+  margin: 0 0 16px;
+  color: #C9FF5B;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+/* Titolo della sezione con dimensione fluida. */
+.section-top h2 {
+  margin: 0;
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.2;
+}
+
+/* Descrizione introduttiva con larghezza limitata. */
+.sect-desc {
+  max-width: 330px;
+  margin: 0;
+  color: #b6c3b7;
+  font-size: 15px;
+}
+
+/*
+   Griglia delle tre card Projects.
+
+   repeat() crea tre colonne.
+   minmax(0, 1fr) permette a ogni traccia
+   di utilizzare una frazione uguale dello spazio.
+*/
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+
+/* ==========================================
+   06.1 STRUTTURA E ANTEPRIME PROJECTS
+========================================== */
+
+/*
+   Tre concept con illustrazioni dedicate:
+   automazione, endpoint API e interfaccia web.
+   Non rappresentano prodotti già pubblicati.
+*/
+.project {
+  --project-accent: #C9FF5B;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin-bottom: 0;
+  min-width: 0;
+  background: linear-gradient(180deg, #1b251f 0%, #17201b 100%);
+  border: 1px solid #35473b;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: border-color 250ms ease, box-shadow 250ms ease;
+}
+
+/* Colore identificativo di ciascuna area tecnica. */
+.project:nth-child(1) { --project-accent: #C9FF5B; }
+.project:nth-child(2) { --project-accent: #91c8ec; }
+.project:nth-child(3) { --project-accent: #f2bca0; }
+
+/* Fondali tono su tono: meno saturi rispetto alle precedenti fasce piene. */
+.visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 218px;
+  min-height: 218px;
+  padding: 23px;
+  border-bottom: 1px solid #34463a;
+}
+
+.v1 {
+  background: radial-gradient(circle at 25% 0%, #334c38, #1d3025 70%, #1b2a20);
+}
+
+.v2 {
+  background: radial-gradient(circle at 25% 0%, #354756, #202f3b 70%, #1b2933);
+}
+
+.v3 {
+  background: radial-gradient(circle at 25% 0%, #51423d, #342a2a 70%, #2b2525);
+}
+
+/* Mini-preview tecnica: elementi grafici decorativi e non interattivi. */
+.mock {
+  width: 340px;
+  max-width: 100%;
+  min-width: 0;
+  height: 170px;
+  padding: 17px;
+  background: rgba(12, 20, 16, 0.83);
+  border: 1px solid color-mix(in srgb, var(--project-accent) 34%, #2e4235);
+  border-radius: 12px;
+  box-shadow: 0 18px 26px rgba(0, 0, 0, 0.10);
+}
+
+.mock-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.mock-label {
+  color: var(--project-accent);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.mock-indicator {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 7px;
+  border-radius: 50%;
+  background: var(--project-accent);
+  opacity: 0.85;
+}
+
+
+/* L'anteprima Frontend entra nello stesso spazio delle altre due card. */
+.mock-ui {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Riduce soltanto le spaziature interne della mini-interfaccia. */
+.mock-ui .mock-heading {
+  margin-bottom: 12px;
+}
+
+.mock-ui .ui-browser-body {
+  min-height: 64px;
+  padding: 10px;
+}
+
+.mock-ui .ui-tiles span {
+  min-height: 46px;
+}
+
+/* Workflow: nodi collegati da frecce in una sequenza funzionale. */
+.workflow-nodes {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.flow-node {
+  min-width: 0;
+  padding: 9px 8px;
+  border: 1px solid #4b6653;
+  border-radius: 7px;
+  background: #23392b;
+  color: #e1eddd;
+  font-family: "Courier New", monospace;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.flow-node-done {
+  border-color: #82ad6e;
+  background: #31482f;
+  color: #cef5a8;
+}
+
+.flow-arrow {
+  color: #9ac789;
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  flex: 0 0 auto;
+}
+
+.mock-caption {
+  margin: 18px 0 0;
+  color: #9eb29f;
+  font-family: "Courier New", monospace;
+  font-size: 10px;
+  letter-spacing: 0.3px;
+}
+
+/* Backend: endpoint, metodo HTTP e risposta JSON dimostrativa. */
+.api-request {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 10px;
+  border: 1px solid #354a5a;
+  border-radius: 7px;
+  background: #172630;
+  white-space: nowrap;
+}
+
+.api-method {
+  color: #a0d9a9;
+  font-family: "Courier New", monospace;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.api-request code {
+  min-width: 0;
+  color: #d7e5ed;
+  font-family: "Courier New", monospace;
+  font-size: 11px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.api-status {
+  margin-left: auto;
+  color: #a0d9a9;
+  font-family: "Courier New", monospace;
+  font-size: 10px;
+  font-weight: 700;
+  flex: 0 0 auto;
+}
+
+.api-response {
+  margin: 16px 0 0;
+  color: #9fbed1;
+  font-family: "Courier New", monospace;
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
+/* Frontend: mini-browser con elementi UI astratti. */
+.ui-browser {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 74px;
+  overflow: hidden;
+  border: 1px solid #514a43;
+  border-radius: 8px;
+  background: #1e2623;
+}
+
+.ui-browser-bar {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 10px;
+  background: #2a302c;
+  border-bottom: 1px solid #465048;
+}
+
+.ui-browser-bar i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #dd998d;
+}
+.ui-browser-bar i:nth-child(2) { background: #ddc17d; }
+.ui-browser-bar i:nth-child(3) { background: #9cc49a; }
+
+.ui-browser-bar span {
+  margin-left: auto;
+  color: #adb5aa;
+  font-family: "Courier New", monospace;
+  font-size: 9px;
+}
+
+.ui-browser-body {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 12px;
+  flex: 1;
+  min-height: 80px;
+  padding: 14px;
+  align-items: center;
+}
+
+.ui-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ui-lines b,
+.ui-lines span,
+.ui-lines em {
+  display: block;
+  height: 7px;
+  border-radius: 4px;
+  background: #708278;
+}
+
+.ui-lines b { width: 75%; height: 10px; background: #e3ede1; }
+.ui-lines span:nth-child(2) { width: 96%; }
+.ui-lines span:nth-child(3) { width: 64%; }
+.ui-lines em { width: 53%; height: 14px; margin-top: 4px; background: #eab69b; }
+
+.ui-tiles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  align-self: stretch;
+}
+
+.ui-tiles span {
+  min-height: 52px;
+  border: 1px solid #5c6258;
+  border-radius: 5px;
+  background: linear-gradient(150deg, #5b7266, #283b33);
+}
+
+.ui-tiles span:nth-child(2) {
+  background: linear-gradient(150deg, #8f756c, #45372f);
+}
+
+
+/* ==========================================
+   06.2 CONTENUTO DELLE CARD
+========================================== */
+
+/*
+   Contenitore della parte testuale.
+
+   flex: 1 gli permette di occupare
+   lo spazio verticale disponibile nella card.
+*/
+.project-copy {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 24px;
+}
+
+/* Numero e stato iniziale del progetto. */
+.project-num {
+  margin: 0 0 12px;
+  color: var(--project-accent);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Titolo del singolo progetto. */
+.project-copy h3 {
+  margin: 0 0 12px;
+  font-size: 22px;
+  line-height: 1.3;
+}
+
+/*
+   Descrizione del progetto.
+
+   :not(.project-num) esclude il paragrafo
+   che contiene il numero del progetto.
+*/
+.project-copy > p:not(.project-num) {
+  margin: 0 0 20px;
+  color: #b6c3b7;
+  font-size: 14px;
+}
+
+/* Lista delle etichette tecnologiche. */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin: 0 0 24px;
+  padding: 0;
+}
+
+/* Singola etichetta tecnologica arrotondata. */
+/* Ogni badge eredita una tinta dedicata alla tecnologia rappresentata. */
+.chip {
+  --chip-accent: #C9FF5B;
+  padding: 6px 10px;
+  background-color: color-mix(in srgb, var(--chip-accent) 9%, #18221c);
+  border: 1px solid color-mix(in srgb, var(--chip-accent) 42%, #34463a);
+  border-radius: 999px;
+  color: var(--chip-accent);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* Colori delle tecnologie, distinti ma armonizzati con il tema dark. */
+.chip--power-automate { --chip-accent: #8CBFFF; }
+.chip--copilot-studio { --chip-accent: #D5B5FF; }
+.chip--dotnet { --chip-accent: #CDB0FF; }
+.chip--rest-api { --chip-accent: #86D9C0; }
+.chip--javascript { --chip-accent: #F5DC75; }
+.chip--react { --chip-accent: #8DE4F3; }
+.chip--css { --chip-accent: #95BFFF; }
+
+/*
+   Stato finale della card.
+
+   margin-top: auto assorbe lo spazio
+   disponibile nel Flexbox verticale,
+   spingendo lo stato verso il basso.
+*/
+.project-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid #34463a;
+  color: #b9c9ba;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Un punto di stato sostituisce la freccia che suggeriva un link inesistente. */
+.project-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--project-accent);
+  opacity: 0.85;
+}
+
+
+/* ==========================================
+   07. ABOUT ME
+========================================== */
+
+/*
+   Divide la sezione About Me in due colonne:
+   - titolo a sinistra;
+   - presentazione e competenze a destra.
+*/
+.about-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 72px;
+  align-items: start;
+}
+
+/* Titolo principale della sezione About. */
+.about h2 {
+  margin: 0;
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1.2;
+  letter-spacing: -1px;
+}
+
+/* Presentazione personale principale. */
+.about-copy {
+  margin: 0 0 24px;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* Evidenzia una frase della presentazione. */
+.about-copy span {
+  color: #C9FF5B;
+}
+
+/* Descrizione delle esperienze professionali. */
+.small-copy {
+  margin: 0 0 32px;
+  color: #b6c3b7;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/*
+   Griglia delle tre categorie di competenze.
+
+   È una Grid annidata nella seconda
+   colonna della griglia About Me.
+*/
+.skillgrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+
+/* ==========================================
+   07.1 CARD DELLE COMPETENZE
+========================================== */
+
+/*
+   Riprende la palette delle card Projects: un colore per ogni
+   area, fondo scuro e bordi discreti. Le card NON sono link.
+*/
+.skill {
+  --skill-accent: #C9FF5B;
+  min-width: 0;
+  padding: 17px;
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      color-mix(in srgb, var(--skill-accent) 8%, transparent),
+      transparent 68%
+    ),
+    #151c19;
+  border: 1px solid color-mix(in srgb, var(--skill-accent) 28%, #34463a);
+  border-radius: 15px;
+  transition: border-color 200ms ease;
+}
+
+/* Automation in azzurro; Tools in pesca, come nelle Projects. */
+.skill:nth-child(2) {
+  --skill-accent: #91c8ec;
+}
+
+.skill:nth-child(3) {
+  --skill-accent: #f2bca0;
+}
+
+/* Titolo a sinistra e icona pertinente a destra, nella stessa riga. */
+.skill-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-width: 0;
+  margin-bottom: 17px;
+}
+
+/* Icona puramente decorativa, non un controllo interattivo. */
+.skill-glyph {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 30px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid color-mix(in srgb, var(--skill-accent) 36%, #34463a);
+  border-radius: 9px;
+  background: color-mix(in srgb, var(--skill-accent) 8%, #151c19);
+  color: var(--skill-accent);
+}
+
+/* SVG locali, senza dipendenze da librerie o servizi esterni. */
+.skill-icon {
+  display: block;
+  width: 17px;
+  height: 17px;
+}
+
+/* Titolo della categoria in evidenza, sulla stessa linea dell'icona. */
+.skill h3 {
+  margin: 0;
+  color: #f2f5f0;
+  font-size: 17px;
+  line-height: 1.25;
+}
+
+/* Lista semantica delle tecnologie, presentata come piccoli badge. */
+.skill ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 8px 6px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* I badge sono etichette, senza aspetto da link. */
+.skill li {
+  margin: 0;
+  padding: 6px 9px;
+  border: 1px solid #334239;
+  border-radius: 999px;
+  background-color: #202b24;
+  color: #d2ded1;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+/* Sottile variazione del bordo al passaggio del mouse. */
+@media (hover: hover) and (pointer: fine) {
+  .skill:hover {
+    border-color: color-mix(in srgb, var(--skill-accent) 65%, #34463a);
+  }
+}
+
+
+/* ==========================================
+   08. CONTACT
+========================================== */
+
+/* Stesso sfondo della pagina, senza linea di separazione. */
+.contact {
+  background-color: #0b0e0d;
+}
+
+/* Divide Contact in due colonne. */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: start;
+}
+
+/* Titolo della sezione Contact. */
+.contact-heading h2 {
+  margin: 0;
+  font-size: clamp(34px, 4vw, 56px);
+  line-height: 1.2;
+  letter-spacing: -1px;
+}
+
+/* Presentazione principale della sezione Contact. */
+.contact-description {
+  margin: 0 0 20px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* Paragrafi secondari della sezione Contact. */
+.contact-content > p:not(.contact-description) {
+  margin: 0 0 28px;
+  color: #b6c3b7;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/*
+   Contenitore semantico dell'indirizzo email.
+
+   font-style: normal elimina il corsivo
+   predefinito del tag HTML address.
+*/
+.contact-details {
+  margin-bottom: 24px;
+  font-style: normal;
+}
+
+/*
+   Collegamento email.
+
+   overflow-wrap evita che indirizzi lunghi
+   escano dal contenitore su schermi piccoli.
+*/
+.contact-email {
+  display: inline-block;
+  max-width: 100%;
+  color: #C9FF5B;
+  font-size: clamp(18px, 2.5vw, 28px);
+  font-weight: 700;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+/* ==========================================
+   09. FOOTER
+========================================== */
+
+/* Footer uniforme alla pagina, senza separatore superiore. */
+.site-footer {
+  padding: 32px 0;
+  background-color: #0b0e0d;
+}
+
+/* Copyright a sinistra, firma creativa a destra. */
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+/* Mantiene la firma creativa allineata a destra del footer. */
+.footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 12px 32px;
+}
+
+/* Tipografia in stile editor, coerente con il footer originale. */
+.footer-info small,
+.footer-links p {
+  margin: 0;
+  color: #9bab9e;
+  font-family: "Courier New", monospace;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+
+/* ==========================================
+   10. INTERAZIONI E TRANSIZIONI
+========================================== */
+
+/*
+   Rende graduali i cambiamenti visivi
+   dei principali collegamenti.
+
+   transition definisce:
+   - proprietà CSS da animare;
+   - durata;
+   - funzione temporale.
+*/
+body > header a,
+.actions .btn,
+.actions .textlink,
+.contact-email,
+.footer-logo {
+  transition:
+    color 200ms ease,
+    background-color 200ms ease,
+    border-color 200ms ease,
+    transform 200ms ease;
+}
+
+
+/* ==========================================
+   10.1 EFFETTI HOVER
+========================================== */
+
+/*
+   Applica gli effetti hover soprattutto
+   ai dispositivi con mouse o trackpad.
+
+   hover: hover indica supporto al passaggio
+   del puntatore sopra gli elementi.
+
+   pointer: fine indica un puntatore preciso.
+*/
+@media (hover: hover) and (pointer: fine) {
+
+  /* I link dell'Header diventano verdi. */
+  body > header a:hover {
+    color: #C9FF5B;
+  }
+
+  /*
+     Il pulsante Contattami acquisisce
+     uno sfondo verde e un testo scuro.
+  */
+  body > header > a:last-child:hover {
+    background-color: #C9FF5B;
+    color: #111713;
+  }
+
+  /*
+     Il pulsante principale della Hero
+     diventa più chiaro e sale di 3px.
+  */
+  .actions .btn:hover {
+    background-color: #d3f6aa;
+    transform: translateY(-3px);
+  }
+
+  /* I collegamenti secondari diventano verdi. */
+  .actions .textlink:hover {
+    color: #C9FF5B;
+  }
+
+  /* Email e logo del Footer diventano più chiari. */
+  .contact-email:hover {
+    color: #d3f6aa;
+  }
+
+  /*
+     Le card Projects cambiano colore del bordo.
+
+     Non utilizziamo cursor: pointer perché
+     le card non sono ancora collegamenti.
+  */
+  .project:hover {
+    border-color: var(--project-accent);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.16);
+  }
+}
+
+
+/* ==========================================
+   10.2 ACCESSIBILITÀ
+========================================== */
+
+/*
+   Evidenzia i link quando ricevono il focus
+   durante la navigazione da tastiera.
+
+   outline definisce il contorno.
+   outline-offset lo distanzia dall'elemento.
+
+   Non nascondiamo mai il focus senza
+   offrire un indicatore alternativo.
+*/
+a:focus-visible {
+  outline: 2px solid #C9FF5B;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/*
+   Rende fluido lo scorrimento tra le sezioni
+   raggiunte attraverso i link con ancora #id.
+*/
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* ==========================================
+   10.3 PREFERENZA DI MOVIMENTO RIDOTTO
+========================================== */
+
+/*
+   Rispetta gli utenti che preferiscono
+   ridurre animazioni e movimenti.
+
+   Se la preferenza è attiva:
+   - lo scorrimento torna immediato;
+   - transizioni e animazioni vengono
+     ridotte a una durata trascurabile.
+*/
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+
+/* ==========================================
+   11. RESPONSIVE DESIGN
+========================================== */
+
+/*
+   Le media query modificano il layout
+   in base alla larghezza della viewport.
+
+   I breakpoint sono organizzati
+   dal più grande al più piccolo.
+*/
+
+
+/* ==========================================
+   11.1 TABLET - FINO A 950PX
+========================================== */
+
+@media (max-width: 950px) {
+
+  /*
+     Le card Projects passano
+     da tre colonne a due colonne.
+  */
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* ==========================================
+   11.2 TABLET - FINO A 900PX
+========================================== */
+
+@media (max-width: 900px) {
+
+  /*
+     L'Header permette ai suoi elementi
+     di andare su più righe.
+  */
+  body > header {
+    flex-wrap: wrap;
+    gap: 12px 20px;
+  }
+
+  /*
+     Il menu viene disposto sulla seconda riga.
+
+     order: 3 cambia l'ordine visivo Flexbox.
+     Non modifica l'ordine HTML o del Tab.
+
+     flex-basis: 100% assegna al menu
+     una larghezza base pari al contenitore.
+  */
+  body > header nav {
+    order: 3;
+    flex-basis: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4px 20px;
+  }
+
+  /*
+     About e Contact passano
+     da due colonne a una sola.
+  */
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+
+/* ==========================================
+   11.3 SCHERMI STRETTI - FINO A 800PX
+========================================== */
+
+@media (max-width: 800px) {
+
+  /*
+     La Hero passa da due colonne a una.
+
+     Il terminale viene posizionato
+     sotto il contenuto testuale.
+  */
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+
+/* ==========================================
+   11.4 SMARTPHONE - FINO A 650PX
+========================================== */
+
+@media (max-width: 650px) {
+
+  /*
+     Riduce lo spazio sopra e sotto
+     la presentazione iniziale.
+  */
+  .hero {
+    padding: 72px 0;
+  }
+
+  /*
+     Riduce lo spazio verticale di
+     Projects, About Me e Contact.
+  */
+  .section {
+    padding: 64px 0;
+  }
+
+  /*
+     Allinea il menu a sinistra e consente
+     ai collegamenti di andare su più righe.
+  */
+  body > header nav {
+    justify-content: flex-start;
+    gap: 4px 20px;
+  }
+
+  /*
+     Garantisce ai link del menu
+     un'altezza minima di 44px
+     per facilitarne l'utilizzo touch.
+  */
+  body > header nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  /*
+     Adatta il titolo principale
+     alla larghezza dello smartphone.
+  */
+  .hero h1 {
+    font-size: clamp(42px, 12vw, 64px);
+    letter-spacing: -1.5px;
+  }
+
+  /*
+     Riduce dimensione e distanza
+     tra i caratteri del sottotitolo.
+  */
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+
+  /* Adatta la dimensione della descrizione Hero. */
+  .hero-intro {
+    font-size: 16px;
+  }
+
+  /* Riduce la distanza tra i collegamenti Hero. */
+  .actions {
+    gap: 16px;
+  }
+
+  /* Rende più compatto il pulsante principale. */
+  .actions .btn {
+    padding: 12px 18px;
+  }
+
+  /*
+     Riduce font e padding del terminale.
+
+     Il codice continua a mantenere
+     lo scorrimento orizzontale interno.
+  */
+  .code {
+    min-height: 290px;
+    padding: 16px;
+    font-size: 12px;
+  }
+
+  /* Riduce il gap per lasciare più spazio al nastro su smartphone. */
+  .ticker-in {
+    gap: 12px;
+  }
+
+  /* Badge leggermente più compatti ma sempre su una sola riga. */
+  .tech-list li {
+    min-height: 38px;
+    padding: 8px 14px;
+    font-size: 11px;
+  }
+
+  /*
+     Titolo e descrizione Projects
+     si dispongono uno sotto l'altro.
+  */
+  .section-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  /* Projects: una card per ogni riga. */
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  /* Anteprima delle card più compatta. */
+  .visual {
+    min-height: 195px;
+    padding: 18px;
+  }
+
+  /* I nodi rimangono compatti quando la card è stretta. */
+  .flow-node { padding: 8px 6px; font-size: 9px; }
+
+  /* Riduce lo spazio interno del contenuto delle card. */
+  .project-copy {
+    padding: 20px;
+  }
+
+  /* Presentazione About Me più compatta. */
+  .about-copy {
+    font-size: 19px;
+  }
+
+  /*
+     Le tre card delle competenze
+     passano da tre colonne a una.
+  */
+  .skillgrid {
+    grid-template-columns: 1fr;
+  }
+
+  /*
+     Footer verticale:
+     copyright, firma e collegamento
+     si dispongono su righe separate.
+  */
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+}
+
+
+/* ==========================================
+   11.5 SMARTPHONE PICCOLI - FINO A 390PX
+========================================== */
+
+@media (max-width: 390px) {
+
+  /*
+     Riduce ulteriormente il titolo Hero
+     per gli smartphone molto stretti.
+  */
+  .hero h1 {
+    font-size: 40px;
+    letter-spacing: -1px;
+  }
+
+  /* Riduce lo spazio tra i collegamenti del menu. */
+  body > header nav {
+    gap: 4px 16px;
+  }
+
+  /* Compatta ulteriormente il codice del terminale. */
+  .code {
+    font-size: 12px;
+    padding: 12px;
+  }
+}
+
+/* ==========================================
+   12. COPIA INDIRIZZO EMAIL
+========================================== */
+
+/*
+   Dispone indirizzo e pulsante uno accanto
+   all'altro, permettendo il ritorno a capo.
+*/
+.contact-details {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 16px;
+}
+
+/* Pulsante per copiare l'indirizzo email. */
+.copy-email {
+  min-height: 44px;
+  padding: 10px 16px;
+
+  background-color: transparent;
+  color: #C9FF5B;
+
+  border: 1px solid #34463a;
+  border-radius: 8px;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease;
+}
+
+/* Effetto hover sui dispositivi con mouse. */
+@media (hover: hover) and (pointer: fine) {
+  .copy-email:hover {
+    background-color: #24342a;
+    border-color: #C9FF5B;
+  }
+}
+
+/* Indicatore visibile per la navigazione da tastiera. */
+.copy-email:focus-visible {
+  outline: 2px solid #C9FF5B;
+  outline-offset: 4px;
+}
+
+/* Messaggio di conferma o errore della copia. */
+.copy-feedback {
+  flex-basis: 100%;
+  color: #b6c3b7;
+  font-size: 12px;
+}
+
+/* Non occupa spazio quando non contiene testo. */
+.copy-feedback:empty {
+  display: none;
+}

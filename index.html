@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Collegamento al foglio di stile CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Collegamento al file JavaScript -->
+    <script src="script.js" defer></script>
+
+    <!-- Descrizione del portfolio -->
+    <meta
+      name="description"
+      content="Portfolio di Charii Taoufik, Junior Software Developer. Progetti e competenze in sviluppo software, automazione e tecnologie web."
+    />
+    <title>Tofy | Junior Software Developer</title>
+  </head>
+
+  <body>
+    <!-- Header e navigazione principale -->
+    <header>
+      <a href="#home">CT</a>
+
+      <nav aria-label="Navigazione principale">
+        <a href="#work">Progetti</a>
+        <a href="#about">Chi sono</a>
+        <a href="#contact">Contatti</a>
+        <a href="#skills">Competenze</a>
+      </nav>
+
+      <a href="#contact">Contattami</a>
+    </header>
+
+    <main>
+      <!-- Sezione Hero: presentazione iniziale -->
+      <section id="home" class="hero">
+        <div class="wrap hero-grid">
+          <!-- Colonna sinistra: presentazione -->
+          <div class="hero-content">
+            <p class="eyebrow">Junior Software Developer · Milano, Italia</p>
+
+            <h1>
+              Build.<br />
+              Automate.<br />
+              <span class="highlight">Repeat.</span>
+            </h1>
+
+            <p class="hero-intro">
+              Sono <strong>Charii Taoufik</strong>. Trasformo problemi complessi
+              in soluzioni digitali essenziali. Dal codice alle automazioni,
+              fino alle integrazioni AI.
+            </p>
+
+            <!-- Collegamenti principali -->
+            <div class="actions">
+              <a href="#work" class="btn">
+                Esplora i progetti
+                <span aria-hidden="true">↗</span>
+              </a>
+
+              <a href="#about" class="textlink">Scopri chi sono ↓</a>
+            </div>
+          </div>
+
+          <!-- Colonna destra: terminale decorativo -->
+          <div class="hero-visual">
+            <div class="terminal">
+              <!-- Barra superiore del terminale -->
+              <div class="terminalbar">
+                <!-- Controlli decorativi ispirati alle finestre macOS -->
+                <div class="terminal-controls" aria-hidden="true">
+                  <span class="circ red"></span>
+                  <span class="circ yellow"></span>
+                  <span class="circ green"></span>
+                </div>
+
+                <span class="filename">about-me.js</span>
+              </div>
+
+              <!-- Codice dimostrativo non eseguibile -->
+              <pre class="code"><code id="typed-code">// Nice to meet you.
+const developer = {
+  name: "Charii Taoufik",
+  focus: [
+    "Software",
+    "Automation",
+    "AI Integration"
+  ],
+  mindset: "keep building"
+};
+
+developer.build();</code></pre>
+            </div>
+
+            <p class="float-label">● ALWAYS LEARNING</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sezione Tech Stack: tecnologie utilizzate -->
+      <section id="skills" class="ticker">
+        <div class="wrap ticker-in">
+          <!-- Il titolo resta fisso sul lato sinistro della barra. -->
+          <h2>Tech I work with</h2>
+
+          <!-- La finestra mostra soltanto le tecnologie che la attraversano. -->
+          <div class="ticker-viewport">
+            <!-- Tre sequenze identiche rendono fluido il nastro anche su desktop larghi. -->
+            <div class="ticker-track">
+              <!-- Lista originale: viene letta una sola volta dai lettori di schermo. -->
+              <ul class="tech-list">
+                <li>C# / .NET</li>
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>Power Automate</li>
+                <li>Azure DevOps</li>
+              </ul>
+
+              <!-- Copia puramente decorativa: nascosta alle tecnologie assistive. -->
+              <ul class="tech-list" aria-hidden="true">
+                <li>C# / .NET</li>
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>Power Automate</li>
+                <li>Azure DevOps</li>
+              </ul>
+
+              <!-- Seconda copia decorativa: nascosta alle tecnologie assistive. -->
+              <ul class="tech-list" aria-hidden="true">
+                <li>C# / .NET</li>
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>Power Automate</li>
+                <li>Azure DevOps</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sezione Projects: presentazione dei progetti -->
+      <section id="work" class="section">
+        <div class="wrap">
+          <!-- Intestazione della sezione -->
+          <div class="section-top">
+            <div>
+              <p class="kicker">SELECTED WORK</p>
+
+              <h2>
+                Non solo codice.<br />
+                Soluzioni in costruzione.
+              </h2>
+            </div>
+
+            <p class="sect-desc">
+              Tre direzioni di lavoro, tra software, workflow e prodotti
+              digitali. Le repository saranno disponibili qui a breve.
+            </p>
+          </div>
+
+          <!-- Contenitore delle tre card -->
+          <div class="cards">
+            <!-- Progetto 1: Workflow Intelligence -->
+            <article class="project">
+              <!-- Anteprima grafica -->
+              <div class="visual v1" aria-hidden="true">
+                <!-- Illustrazione concettuale di un flusso di automazione -->
+                <div class="mock mock-flow">
+                  <div class="mock-heading">
+                    <span class="mock-label">WORKFLOW</span>
+                    <span class="mock-indicator"></span>
+                  </div>
+                  <div class="workflow-nodes">
+                    <span class="flow-node">Trigger</span>
+                    <span class="flow-arrow">→</span>
+                    <span class="flow-node">Process</span>
+                    <span class="flow-arrow">→</span>
+                    <span class="flow-node flow-node-done">Done ✓</span>
+                  </div>
+                  <p class="mock-caption">AUTOMATION FLOW / CONCEPT</p>
+                </div>
+              </div>
+
+              <!-- Informazioni del progetto -->
+              <div class="project-copy">
+                <p class="project-num">PROJECT 001 · CONCEPT IN PREPARAZIONE</p>
+
+                <h3>Workflow Intelligence</h3>
+
+                <p>
+                  Automazioni per ridurre attività ripetitive e collegare
+                  strumenti e processi aziendali.
+                </p>
+
+                <!-- Tecnologie utilizzate -->
+                <ul class="chips">
+                  <li class="chip chip--power-automate">Power Automate</li>
+                  <li class="chip chip--copilot-studio">Copilot Studio</li>
+                </ul>
+
+                <!-- Stato del progetto -->
+                <div class="project-foot">
+                  <span>CASE STUDY IN ARRIVO</span>
+                  <span class="project-status-dot" aria-hidden="true"></span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Progetto 2: Backend Foundations -->
+            <article class="project">
+              <!-- Anteprima grafica -->
+              <div class="visual v2" aria-hidden="true">
+                <!-- Illustrazione concettuale di una richiesta API -->
+                <div class="mock mock-api">
+                  <div class="mock-heading">
+                    <span class="mock-label">BACKEND</span>
+                    <span class="mock-indicator"></span>
+                  </div>
+                  <div class="api-request">
+                    <span class="api-method">GET</span>
+                    <code>/api/projects</code>
+                    <span class="api-status">200 OK</span>
+                  </div>
+                  <p class="api-response">{ "status": "ok", "data": [] }</p>
+                </div>
+              </div>
+
+              <!-- Informazioni del progetto -->
+              <div class="project-copy">
+                <p class="project-num">PROJECT 002 · CONCEPT IN PREPARAZIONE</p>
+
+                <h3>Backend Foundations</h3>
+
+                <p>
+                  Applicazioni e servizi con attenzione alla logica, alla
+                  struttura del codice e alle integrazioni software.
+                </p>
+
+                <!-- Tecnologie utilizzate -->
+                <ul class="chips">
+                  <li class="chip chip--dotnet">C# / .NET</li>
+                  <li class="chip chip--rest-api">REST API</li>
+                </ul>
+
+                <!-- Stato del progetto -->
+                <div class="project-foot">
+                  <span>CASE STUDY IN ARRIVO</span>
+                  <span class="project-status-dot" aria-hidden="true"></span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Progetto 3: Digital Experiences -->
+            <article class="project">
+              <!-- Anteprima grafica -->
+              <div class="visual v3" aria-hidden="true">
+                <!-- Illustrazione concettuale di una piccola interfaccia web -->
+                <div class="mock mock-ui">
+                  <div class="mock-heading">
+                    <span class="mock-label">FRONTEND</span>
+                    <span class="mock-indicator"></span>
+                  </div>
+                  <div class="ui-browser">
+                    <div class="ui-browser-bar">
+                      <i></i><i></i><i></i>
+                      <span>preview.local</span>
+                    </div>
+                    <div class="ui-browser-body">
+                      <div class="ui-lines"><b></b><span></span><span></span><em></em></div>
+                      <div class="ui-tiles"><span></span><span></span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Informazioni del progetto -->
+              <div class="project-copy">
+                <p class="project-num">PROJECT 003 · CONCEPT IN PREPARAZIONE</p>
+
+                <h3>Digital Experiences</h3>
+
+                <p>
+                  Interfacce web intuitive, responsive e costruite per offrire
+                  esperienze digitali moderne e accessibili.
+                </p>
+
+                <!-- Tecnologie utilizzate -->
+                <ul class="chips">
+                  <li class="chip chip--javascript">JavaScript</li>
+                  <li class="chip chip--react">React</li>
+                  <li class="chip chip--css">CSS</li>
+                </ul>
+
+                <!-- Stato del progetto -->
+                <div class="project-foot">
+                  <span>CASE STUDY IN ARRIVO</span>
+                  <span class="project-status-dot" aria-hidden="true"></span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sezione About Me: presentazione e competenze -->
+      <section id="about" class="section about">
+        <!-- Contenitore delle due colonne -->
+        <div class="wrap about-grid">
+          <!-- Colonna sinistra: titolo -->
+          <div>
+            <p class="kicker">ABOUT ME</p>
+
+            <h2>
+              Curioso per natura.<br />
+              Developer per scelta.
+            </h2>
+          </div>
+
+          <!-- Colonna destra: descrizione e competenze -->
+          <div>
+            <!-- Presentazione personale -->
+            <p class="about-copy">
+              Mi piace capire
+              <span>come funzionano le cose</span>. Ancora di più, trovare un
+              modo per farle funzionare meglio.
+            </p>
+
+            <p class="small-copy">
+              Il mio percorso parte da esperienze tecniche e operative, e
+              prosegue nello sviluppo software. Ho lavorato con
+              C#/.NET, Microsoft Power Automate, Copilot e strumenti Azure
+              DevOps. Continuo a costruire e approfondire nuovi strumenti, un
+              progetto alla volta.
+            </p>
+
+            <!-- Categorie delle competenze -->
+            <div class="skillgrid">
+              <!-- Categoria Development -->
+              <div class="skill">
+                <!-- Titolo con icona coerente, allineata a destra -->
+                <div class="skill-top">
+                  <h3>Development</h3>
+                  <span class="skill-glyph" aria-hidden="true">
+                    <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                    <path d="m8 7-5 5 5 5" />
+                    <path d="m16 7 5 5-5 5" />
+                    <path d="m14 4-4 16" />
+                  </svg>
+                  </span>
+                </div>
+
+                <ul>
+                  <li>C# / .NET</li>
+                  <li>JavaScript / React</li>
+                  <li>HTML / CSS</li>
+                </ul>
+              </div>
+
+              <!-- Categoria Automation -->
+              <div class="skill">
+                <!-- Titolo con icona coerente, allineata a destra -->
+                <div class="skill-top">
+                  <h3>Automation</h3>
+                  <span class="skill-glyph" aria-hidden="true">
+                    <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                    <rect x="2.5" y="2.5" width="7" height="7" rx="1.5" />
+                    <rect x="14.5" y="14.5" width="7" height="7" rx="1.5" />
+                    <path d="M6 9.5v5a3.5 3.5 0 0 0 3.5 3.5h5" />
+                  </svg>
+                  </span>
+                </div>
+
+                <ul>
+                  <li>Power Automate</li>
+                  <li>Copilot Studio</li>
+                  <li>AI Integration</li>
+                </ul>
+              </div>
+
+              <!-- Categoria Tools -->
+              <div class="skill">
+                <!-- Titolo con icona coerente, allineata a destra -->
+                <div class="skill-top">
+                  <h3>Tools</h3>
+                  <span class="skill-glyph" aria-hidden="true">
+                    <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.1-3.1a6 6 0 0 1-7.8 7.8l-6.3 6.3a2 2 0 0 1-2.8-2.8l6.3-6.3a6 6 0 0 1 7.8-7.8z" />
+                  </svg>
+                  </span>
+                </div>
+
+                <ul>
+                  <li>Git</li>
+                  <li>Azure DevOps</li>
+                  <li>Visual Studio Code</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sezione Contact: opportunità professionali -->
+      <section id="contact" class="section contact">
+        <div class="wrap">
+          <!-- Contenitore delle due colonne -->
+          <div class="contact-grid">
+            <!-- Colonna sinistra: titolo -->
+            <div class="contact-heading">
+              <p class="kicker">CONTACT</p>
+
+              <h2>
+                Il prossimo passo.<br />
+                Una nuova opportunità.
+              </h2>
+            </div>
+
+            <!-- Colonna destra: descrizione e contatti -->
+            <div class="contact-content">
+              <p class="contact-description">
+                Sto costruendo il mio percorso come Software Developer,
+                combinando sviluppo software, automazione e nuove tecnologie.
+              </p>
+
+              <p>
+                Sono interessato a opportunità professionali in cui contribuire
+                a progetti concreti, confrontarmi con un team e continuare a
+                crescere tecnicamente.
+              </p>
+
+              <!-- Indirizzo email -->
+
+              <!-- Indirizzo email e funzione di copia -->
+              <address class="contact-details">
+                <!-- Collegamento che apre il programma email -->
+                <a
+                  href="mailto:charii.taoufik97@gmail.com"
+                  class="contact-email"
+                >
+                  charii.taoufik97@gmail.com
+                  <span aria-hidden="true">↗</span>
+                </a>
+
+                <!-- Pulsante per copiare l'indirizzo email -->
+                <button type="button" class="copy-email" id="copy-email">
+                  Copia email
+                </button>
+
+                <!-- Messaggio accessibile di conferma o errore -->
+                <span
+                  id="copy-feedback"
+                  class="copy-feedback"
+                  role="status"
+                  aria-live="polite"
+                ></span>
+              </address>
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer: informazioni finali del portfolio -->
+    <footer class="site-footer">
+      <div class="wrap footer-content">
+        <!-- Copyright: l'anno viene aggiornato tramite JavaScript. -->
+        <div class="footer-info">
+          <small>&copy; <span id="current-year">2026</span> Charii Taoufik</small>
+        </div>
+
+        <!-- Firma creativa del portfolio. -->
+        <div class="footer-links">
+          <p>Designed &amp; built with curiosity.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
